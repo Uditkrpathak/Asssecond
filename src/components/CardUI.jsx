@@ -3,10 +3,13 @@ import { toast } from 'react-toastify';
 
 
 const CardUI = ({item}) => {
-   const [added, setAdded] = useState(false);
+   const [added, setAdded] = useState("Add");
   
     const handleAdd = () => {
-      setAdded(true);
+      // setAdded(true);
+      if(added ==="Add" ) setAdded("Added");
+        else if(added === "Added") setAdded("Add");
+      else ("Add");
       toast(`${item.name} added!`);
     };
   return (
@@ -21,10 +24,14 @@ const CardUI = ({item}) => {
 
       <button
         onClick={handleAdd}
-        disabled={added}
-        className={`mt-3 px-6 py-2  rounded-xl font-serif text-lg font-bold absolute right-8 top-36 ${added ? 'bg-green-500 text-white' : 'bg-gray-200 text-black'}`}
+        className={`mt-3 px-6 py-2  rounded-xl font-serif text-lg font-bold absolute right-8 top-36 ${
+        added === "Add"
+          ? "bg-white text-black border border-gray-300 hover:bg-gray-100"
+          : "bg-green-500 text-white hover:bg-green-600"
+      } `}
       >
-        {added ? 'Added' : 'Add'}
+        {added
+        }
       </button>
          </div>
      

@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 
 const ProductCard = ({ item }) => {
-  const [added, setAdded] = useState(false);
+  const [added, setAdded] = useState("Add");
 
   const handleAdd = () => {
-    setAdded(true);
+    if(added ==="Add" ) setAdded("Added");
+        else if(added === "Added") setAdded("Add");
+      else ("Add");
     toast(`${item.name} added!`);
   };
 
@@ -19,10 +21,14 @@ const ProductCard = ({ item }) => {
 
       <button
         onClick={handleAdd}
-        disabled={added}
-        className={`mt-2 px-3 py-2 text-lg font-semibold font-serif absolute rounded-xl top-40 right-6 ${added ? 'bg-green-500 text-white' : 'bg-white text-black'}`}
+       
+        className={`mt-2 px-3 py-2 text-lg font-semibold font-serif absolute rounded-xl top-40 right-6 ${
+        added === "Add"
+          ? "bg-white text-black border border-gray-300 hover:bg-gray-100"
+          : "bg-green-500 text-white hover:bg-green-600"
+      } `}
       >
-        {added ? 'Added' : 'Add'}
+        {added}
       </button>
          </div>
       <img src={item.image} alt={item.name} className="object-cover w-40 rounded-2xl h-52 " />
