@@ -5,10 +5,14 @@ const ProductCard = ({ item }) => {
   const [added, setAdded] = useState("Add");
 
   const handleAdd = () => {
-    if(added ==="Add" ) setAdded("Added");
+    if(added ==="Add" ){
+      setAdded("Added");
+      toast(`${item.name} added!`);
+      
+    } 
         else if(added === "Added") setAdded("Add");
       else ("Add");
-    toast(`${item.name} added!`);
+    
   };
 
   return (
