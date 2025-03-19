@@ -10,7 +10,7 @@ const ProductCard = ({ item }) => {
   };
 
   return (
-    <div className="relative max-w-5xl p-4 m-auto border rounded-lg shadow-lg">
+    <div className="relative max-w-5xl p-4 m-auto border shadow-xl rounded-xl">
       <div className='flex justify-around gap-6 '>
          <div className='flex flex-col '>
            <h3 className="mt-4 mb-4 font-serif text-lg font-semibold">{item.name}</h3>

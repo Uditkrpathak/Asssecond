@@ -11,7 +11,7 @@ const CardUI = ({item}) => {
     };
   return (
     <div>
- <div className="relative p-2 border rounded-md shadow-lg ">
+ <div className="relative p-2 border rounded-md shadow-xl ">
       <div className='flex flex-col justify-around gap-6 '>
       <img src={item.image} alt={item.name} className="object-cover w-full rounded-lg h-52 " />
          <div className='flex flex-col '>
